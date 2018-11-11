@@ -1,0 +1,108 @@
+﻿<Page x:Class="PersonalBankerWPF.OpenAccount"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PersonalBankerWPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OpenAccount">
+    <Page.Resources>
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        <Style x:Key="TextBoxStyle1" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextAlignment="Center" />
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Button" x:Key="TabButtonFirst">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="3,0,0,0" Background="White" BorderBrush="#ccc" BorderThickness="0,1,1,0" >
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="3,3,3,3" Background="#F7B519" BorderBrush="#ccc" BorderThickness="0,0,0,0" >
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid Margin="10,0,10,10" x:Name="rootGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="145" />
+            <ColumnDefinition Width="490" />
+            <ColumnDefinition Width="145" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="bgRed.png" />
+        </Grid.Background>
+
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="123,60,0,0" TextWrapping="Wrap" Text="What Kind of Account would you like to open?" VerticalAlignment="Top"/>
+
+        <Button x:Name="InterestButton"  Content="Interest" Grid.Column="1" HorizontalAlignment="Left" Margin="123,112,0,0" VerticalAlignment="Top" Width="75" Click="CreateInterest"/>
+        <TextBlock x:Name="InterestOpenBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="60,7,0,0" TextWrapping="Wrap" Text="How Much Would You Like To Deposit" Visibility="hidden" VerticalAlignment="Top" Grid.Row="2"/>
+        <TextBox x:Name="InterestOpenBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="123,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Visibility="hidden" Style="{DynamicResource TextBoxStyle2}" Grid.Row="2"/>
+        <Button x:Name="InterestOpenButton" Content="Open" Background="Yellow" Grid.Column="1" HorizontalAlignment="Left" Margin="123,80,0,0" VerticalAlignment="Top" Width="75" Visibility="hidden" Click="OpenInterest" Grid.Row="2"/>
+        <TextBlock x:Name="InterestNameBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="40,145,0,0" TextWrapping="Wrap" Text="What Would You Like To Name Your Account?" Visibility="hidden" VerticalAlignment="Top" Width="244"/>
+        <TextBox x:Name="InterestNameBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="123,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Visibility="hidden" Style="{DynamicResource TextBoxStyle2}"/>
+
+        <Button x:Name="SavingsButton" Content="Savings" Grid.Column="1" HorizontalAlignment="Left" Margin="294,112,0,0" VerticalAlignment="Top" Width="75" Click="CreateSavings"/>
+        <TextBlock x:Name="SavingsOpenBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="235,7,0,0" TextWrapping="Wrap" Text="How Much Would You Like To Deposit" VerticalAlignment="Top" Visibility="hidden" Grid.Row="2"/>
+        <TextBox x:Name="SavingsOpenBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="294,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Visibility="hidden" Style="{DynamicResource TextBoxStyle2}" Grid.Row="2"/>
+        <Button x:Name="SavingsOpenButton" Content="Open" Grid.Column="1" HorizontalAlignment="Left" Margin="294,80,0,0" VerticalAlignment="Top" Width="75" Visibility="hidden" Grid.Row="2" Click="OpenSavings"/>
+        <TextBlock x:Name="SavingsNameBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="211,145,0,0" TextWrapping="Wrap" Text="What Would You Like To Name Your Account?" Visibility="hidden" VerticalAlignment="Top" Width="244"/>
+        <TextBox x:Name="SavingsNameBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="294,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Visibility="hidden" Style="{DynamicResource TextBoxStyle2}"/>
+    </Grid>
+</Page>
