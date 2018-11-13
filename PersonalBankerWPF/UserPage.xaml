@@ -102,10 +102,8 @@
         <Grid.Background>
             <ImageBrush ImageSource="bgRed.png" />
         </Grid.Background>
-        
-        <Button Content="Create New Account" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="133" Height="25" Click="CreateNewAccount"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="23,10,0,0" Grid.Row="4" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextAlignment="Center" Style="{DynamicResource TextBoxStyle2}"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="23,41,0,0" Grid.Row="4" TextWrapping="Wrap" Text="TextBox" TextAlignment="Center" VerticalAlignment="Top" Width="120" Style="{DynamicResource TextBoxStyle2}"/>
+
+        <Button Content="Create New Account" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Width="133" Height="25" Click="CreateNewAccount" Grid.Column="2"/>
 
         <Button x:Name="Account1" Visibility="Hidden" HorizontalAlignment="Left" Margin="136,0,0,0" VerticalAlignment="Top" Width="318" Height="53" Click="MakeTransfer" Grid.Column="1" Grid.Row="2" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
             <StackPanel>
@@ -138,17 +136,18 @@
         <TextBlock x:Name="numberText3" Text="" Grid.Column="1" Margin="151,10,249,72" FontWeight="Bold" Grid.Row="6" />
         <TextBlock x:Name="numberText4" Text="" Grid.Column="1" Margin="151,10,249,72" FontWeight="Bold" Grid.Row="8" />
         <TextBlock x:Name="numberText5" Text="" Grid.Column="1" Margin="151,10,249,72" FontWeight="Bold" Grid.Row="10" />
-        
+
         <TextBlock x:Name="nameText1" Text="" Grid.Column="1" Margin="151,31,249,51" FontWeight="Bold" Grid.Row="2" />
         <TextBlock x:Name="nameText2" Text="" Grid.Column="1" Margin="151,31,249,51" FontWeight="Bold" Grid.Row="4" />
         <TextBlock x:Name="nameText3" Text="" Grid.Column="1" Margin="151,31,249,51" FontWeight="Bold" Grid.Row="6" />
         <TextBlock x:Name="nameText4" Text="" Grid.Column="1" Margin="151,31,249,51" FontWeight="Bold" Grid.Row="8" />
         <TextBlock x:Name="nameText5" Text="" Grid.Column="1" Margin="151,31,249,51" FontWeight="Bold" Grid.Row="10" />
-        
-        <TextBlock x:Name="balanceText1" Text="" Grid.Column="1" Margin="364,13,86,61" Grid.Row="2" FontWeight="Bold" FontSize="16"/>
-        <TextBlock x:Name="balanceText2" Text="" Grid.Column="1" Margin="364,13,86,61" Grid.Row="4" FontWeight="Bold" FontSize="16"/>
-        <TextBlock x:Name="balanceText3" Text="" Grid.Column="1" Margin="364,13,86,61" Grid.Row="6" FontWeight="Bold" FontSize="16"/>
-        <TextBlock x:Name="balanceText4" Text="" Grid.Column="1" Margin="364,13,86,61" Grid.Row="8" FontWeight="Bold" FontSize="16"/>
-        <TextBlock x:Name="balanceText5" Text="" Grid.Column="1" Margin="364,13,86,61" Grid.Row="10" FontWeight="Bold" FontSize="16"/>
+
+        <TextBlock x:Name="balanceText1" Text="" Grid.Column="1" Margin="337,12.6,62,60.8" Grid.Row="2" FontWeight="Bold" FontSize="16"/>
+        <TextBlock x:Name="balanceText2" Text="" Grid.Column="1" Margin="337,13.2,62,61.2" Grid.Row="4" FontWeight="Bold" FontSize="16"/>
+        <TextBlock x:Name="balanceText3" Text="" Grid.Column="1" Margin="337,12.8,62,60.6" Grid.Row="6" FontWeight="Bold" FontSize="16"/>
+        <TextBlock x:Name="balanceText4" Text="" Grid.Column="1" Margin="337,13.4,62,61" Grid.Row="8" FontWeight="Bold" FontSize="16"/>
+        <TextBlock x:Name="balanceText5" Text="" Grid.Column="1" Margin="337,13,62,61.4" Grid.Row="10" FontWeight="Bold" FontSize="16"/>
+        <Button Content="Logout" HorizontalAlignment="Left" Margin="47,63,0,0" VerticalAlignment="Top" Width="133" Height="25" Click="BackHome"/>
     </Grid>
 </Page>

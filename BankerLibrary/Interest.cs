@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersonalBankerWPF
+namespace BankerLibrary
 {
     public class Interest : Account
     {
+        //holds values for balance interest
         private double _balance;
         private double _interest;
 
@@ -16,6 +17,7 @@ namespace PersonalBankerWPF
             
         }
 
+        // getter for Balance
         public override double Balance
         {
             get
@@ -28,11 +30,13 @@ namespace PersonalBankerWPF
             }
         }
 
+        // placeholder for database implementation
         public void recieveTransaction()
         {
 
         }
 
+        // upcoming feature to alter interest
         public void gainInterest()
         {
             _interest += (_balance * 0.01);

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersonalBankerWPF
+namespace BankerLibrary
 {
     public class User
     {
+        // Holds username, password, active accounts, and list of all accounts for uses
         private string _username;
         private string _password;
         List<Account> _accounts = new List<Account>();
@@ -18,6 +19,7 @@ namespace PersonalBankerWPF
             _password = password;
         }
 
+        // getter for username
         public string Username
         {
             get
@@ -26,6 +28,7 @@ namespace PersonalBankerWPF
             }
         }
 
+        // getter for password
         public string Password
         {
             get
@@ -34,6 +37,7 @@ namespace PersonalBankerWPF
             }
         }
 
+        // getter for active account
         public Account ActiveAccount
         {
             get
@@ -46,6 +50,7 @@ namespace PersonalBankerWPF
             }
         }
 
+        // getter AccountList
         public List<Account> AccountList
         {
             get

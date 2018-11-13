@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using BankerLibrary;
 
 namespace PersonalBankerWPF
 {
@@ -35,6 +35,8 @@ namespace PersonalBankerWPF
 
         public void LoginUser(object sender, RoutedEventArgs e)
         {
+            PasswordTextBox.Text = PasswordBox.Password;
+
             foreach (User u in Manager.banker.Users)
             {
                 if (UsernameTextBox.Text == u.Username && PasswordTextBox.Text == u.Password)
@@ -45,7 +47,10 @@ namespace PersonalBankerWPF
                     
                     break;
                 }
-                //else this.NavigationService.Navigate(Navigator.pbHome);
+                else
+                {
+                    ErrorTextBlock.Visibility = Visibility.Visible;
+                }
             }
 
         }

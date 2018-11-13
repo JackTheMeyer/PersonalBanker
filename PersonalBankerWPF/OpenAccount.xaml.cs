@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using BankerLibrary;
 
 namespace PersonalBankerWPF
 {
@@ -46,11 +47,9 @@ namespace PersonalBankerWPF
         {
             Interest intAcc = new Interest("063011", GenerateAccountNumber());
             intAcc.Name += InterestNameBox.Text;
-            Manager.banker.AccCreated();
             double bal = double.Parse(InterestOpenBox.Text);
             intAcc.Balance = bal;
             Manager.currentUser.AccountList.Add(intAcc);
-
             Manager.banker.saveAccounts();
 
             UserPage userPage = new UserPage();
@@ -75,7 +74,7 @@ namespace PersonalBankerWPF
         {
             Savings savAcc = new Savings("063011", GenerateAccountNumber());
             savAcc.Name += SavingsNameBox.Text;
-            Manager.banker.AccCreated();
+            
             double bal = double.Parse(SavingsOpenBox.Text);
             savAcc.Balance = bal;
             Manager.currentUser.AccountList.Add(savAcc);
@@ -88,7 +87,7 @@ namespace PersonalBankerWPF
   
         public string GenerateAccountNumber()
         {
-            using (StreamReader sr = new StreamReader(@"C:\Users\Jack\Desktop\OOP\PersonalBankerWPF\RandomAccountNumbers.txt"))
+            using (StreamReader sr = new StreamReader(@"C:\Users\Jackm\Desktop\PBv2\RandomAccountNumbers.txt"))
             {
                 int i = 0;
                 string line = "";

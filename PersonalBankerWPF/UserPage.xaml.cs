@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BankerLibrary;
 
 namespace PersonalBankerWPF
 {
@@ -119,6 +120,12 @@ namespace PersonalBankerWPF
         {
             OpenAccount openAccount = new OpenAccount();
             this.NavigationService.Navigate(openAccount);
+        }
+
+        private void BackHome(object sender, RoutedEventArgs e)
+        {
+            PersonalBankerHome home = new PersonalBankerHome();
+            this.NavigationService.Navigate(home);
         }
     }
 }

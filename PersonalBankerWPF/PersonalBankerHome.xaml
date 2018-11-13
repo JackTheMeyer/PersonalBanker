@@ -78,7 +78,7 @@
             </Setter>
         </Style>
     </Page.Resources>
-    
+
     <Grid Margin="10,0,10,10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="190" />
@@ -87,17 +87,20 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition Height="305*"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition />
+            <RowDefinition Height="253*" />
+            <RowDefinition Height="52*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Button Grid.Column="1" Grid.Row="2" Margin="0,77,186,194" Width="125" Height="25" HorizontalAlignment="Right"  Click="CreateUser">New User</Button>
-        <TextBox x:Name="UsernameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="129,93,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="251" Style="{DynamicResource TextBoxStyle2}"/>
-        <TextBlock x:Name="UsernameTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="129,72,0,0" TextWrapping="Wrap" Text="Client Number" VerticalAlignment="Top" Width="251"/>
-        <TextBox x:Name="PasswordTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="129,158,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="251" Style="{DynamicResource TextBoxStyle2}"/>
-        <TextBlock x:Name="PasswordTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="129,137,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="251"/>
-        <Button Grid.Column="1" Margin="0,232,186,37" Width="126" Height="25" HorizontalAlignment="Right" Click="LoginUser" Content="Login"/>
+        <Button Grid.Column="1" Grid.Row="2" Margin="0,81.2,186.4,146.86" Width="125" Height="25" HorizontalAlignment="Right"  Click="CreateUser">New User</Button>
+        <TextBox x:Name="UsernameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="128.6,93,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="251" Style="{DynamicResource TextBoxStyle2}"/>
+        <TextBlock x:Name="UsernameTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="128.6,72,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="251"/>
+        <TextBox x:Name="PasswordTextBox" Visibility="Hidden" HorizontalAlignment="Left" Height="23" Margin="128.6,209,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="251" Style="{DynamicResource TextBoxStyle2}" Grid.Column="1"/>
+        <TextBlock x:Name="PasswordTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="128.6,137,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="251"/>
+        <Button Grid.Column="1" Margin="0,237,186.4,42.8" Width="126" Height="25" HorizontalAlignment="Right" Click="LoginUser" Content="Login"/>
+        <PasswordBox x:Name="PasswordBox" Grid.Column="1" PasswordChar="*" HorizontalAlignment="Left" Margin="128.6,158,0,0" VerticalAlignment="Top" Width="251" Height="22"/>
+        <TextBlock x:Name="ErrorTextBlock" Visibility="Hidden" Grid.Column="1" HorizontalAlignment="Left" Margin="101.6,279,0,0" TextWrapping="Wrap" Text="Incorrect Username or Password. Please try again." VerticalAlignment="Top" Width="298"/>
         <Grid.Background>
             <ImageBrush ImageSource="bgRed.png" />
         </Grid.Background>

@@ -1,0 +1,6 @@
+C:\Users\JackM\Desktop\PBv2\BankerLibrary\obj\Debug\BankerLibrary.csprojAssemblyReference.cache
+C:\Users\JackM\Desktop\PBv2\BankerLibrary\obj\Debug\BankerLibrary.csproj.CoreCompileInputs.cache
+C:\Users\JackM\Desktop\PBv2\BankerLibrary\bin\Debug\BankerLibrary.dll
+C:\Users\JackM\Desktop\PBv2\BankerLibrary\bin\Debug\BankerLibrary.pdb
+C:\Users\JackM\Desktop\PBv2\BankerLibrary\obj\Debug\BankerLibrary.dll
+C:\Users\JackM\Desktop\PBv2\BankerLibrary\obj\Debug\BankerLibrary.pdb

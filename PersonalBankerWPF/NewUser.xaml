@@ -89,9 +89,7 @@
         <TextBox x:Name="UsernameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Style="{DynamicResource TextBoxStyle2}"/>
         <TextBox x:Name="PasswordTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Style="{DynamicResource TextBoxStyle2}"/>
         <TextBlock x:Name="PasswordTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="190,143,0,0" TextWrapping="Wrap" Text="Choose a Password" VerticalAlignment="Top"/>
-        <TextBlock x:Name="UsernameTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="178,83,0,0" TextWrapping="Wrap" Text="Chose a Client Number" VerticalAlignment="Top"/>
-        <TextBox x:Name="BalanceTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="181,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  Grid.Row="2" Style="{DynamicResource TextBoxStyle2}"/>
-        <TextBlock x:Name="BalanceTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="139,10,0,0" TextWrapping="Wrap" Text="How much would you like to deposit?" VerticalAlignment="Top" Width="218" Grid.Row="2"/>
+        <TextBlock x:Name="UsernameTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="212.2,83,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top"/>
         <Grid.Background>
             <ImageBrush ImageSource="bgRed.png" />
         </Grid.Background>

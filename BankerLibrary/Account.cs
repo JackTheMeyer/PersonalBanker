@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersonalBankerWPF
+namespace BankerLibrary
 {
     public abstract class Account
     {
+        // Holds BsB, Account Number, and Name for each account
         private string _bsb;
         private string _accountNumber;
         private string _name;
@@ -19,6 +20,7 @@ namespace PersonalBankerWPF
 
         }
 
+        // getter for BSB
         public string BSB
         {
             get
@@ -27,6 +29,7 @@ namespace PersonalBankerWPF
             }
         }
 
+        // getter for AccountNumber
         public string AccountNumber
         {
             get
@@ -35,6 +38,7 @@ namespace PersonalBankerWPF
             }
         }
 
+        // getter for Name
         public string Name
         {
             get
@@ -47,6 +51,7 @@ namespace PersonalBankerWPF
             }
         }
 
+        // Abstract value for balance, overridden by Interest + Savings Balance
         public abstract double Balance
         {
             get;

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PersonalBankerWPF
+namespace BankerLibrary
 {
     public class Savings : Account
     {
+        // holds value for balance
         private double _balance;
 
         public Savings(string bsb, string account) : base(bsb, account)
@@ -15,6 +16,7 @@ namespace PersonalBankerWPF
             
         }
 
+        // override  for balance
         public override double Balance
         {
             get
@@ -27,6 +29,8 @@ namespace PersonalBankerWPF
             }
         }
 
+
+        // feature for upcoming database intergration
         public void recieveTransaction()
         {
 

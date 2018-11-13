@@ -5,25 +5,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace PersonalBankerWPF
+namespace BankerLibrary
 {
     public class BankingSystem
     {
+        // Banksystem ascts as the server for holding user and account data
+        // user list of all the users saved in the system
         private List<User> _userList = new List<User>();
-        private string _nextBSB = "";
-        private string _nextAccNo = "";
+        
 
         public BankingSystem()
         {
 
         }
         
+        //checks to see if there is available funds in recipeient account
         public void verifyTransaction(Transaction transfer)
         {
             if (transfer is Debit)
             {
                 Debit tfer = transfer as Debit;
-                if (tfer.Reciever.Balance < tfer.Amount)
+                if (tfer.Reciever.Balance < tfer.DebitAmount)
                 {
                     errorMessage("Not enough funds available in account: " + tfer.Reciever.BSB + " " + tfer.Reciever.AccountNumber);
                 } else
@@ -36,17 +38,20 @@ namespace PersonalBankerWPF
             
         }
         
+        // Populates users and their accounts from a text file
         public void populateAccounts()
         {
 
-            using (StreamReader sr = new StreamReader(@"C:\Users\Jack\Desktop\OOP\PersonalBankerWPF\users.txt"))
+            using (StreamReader sr = new StreamReader(@"C:\Users\Jackm\Desktop\PBv2\users.txt"))
             {
                 Manager.accountCounter = int.Parse(sr.ReadLine());
 
                 int i = 0;
-                
+
                 while (!sr.EndOfStream)
                 {
+                    
+                    i = 0;
                     string username = sr.ReadLine();
                     string password = sr.ReadLine();
                     int accountList = int.Parse(sr.ReadLine());
@@ -77,10 +82,11 @@ namespace PersonalBankerWPF
                         }
 
                         i++;
-                        
+
                     }
 
                     Manager.banker.Users.Add(user);
+                   
                     
                     
                 }
@@ -90,55 +96,65 @@ namespace PersonalBankerWPF
 
         }
         
+        // Write all users and their accounts to a text file
         public void saveAccounts()
         {
-            using (StreamWriter sw = new StreamWriter(@"C:\Users\Jack\Desktop\OOP\PersonalBankerWPF\users.txt"))
+            using (StreamWriter sw = new StreamWriter(@"C:\Users\Jackm\Desktop\PBv2\users.txt"))
             {
-                sw.WriteLine(Manager.accountCounter);
+                sw.Write(Manager.accountCounter);
                foreach (User u in _userList)
                 {
-                    sw.WriteLine(u.Username);
-                    sw.WriteLine(u.Password);
-                    sw.WriteLine(u.AccountList.Count);
+                    sw.WriteLine();
+                    sw.Write(u.Username);
+                    sw.WriteLine();
+                    sw.Write(u.Password);
+                    sw.WriteLine();
+                    sw.Write(u.AccountList.Count);
                     foreach (Account a in u.AccountList)
                     {
                         if (a is Interest)
                         {
-                            sw.WriteLine("Interest");
+                            sw.WriteLine();
+                            sw.Write("Interest");
                         }
                         else
                         {
-                            sw.WriteLine("Savings");
+                            sw.WriteLine();
+                            sw.Write("Savings");
                         }
-                        sw.WriteLine(a.Name);
-                        sw.WriteLine(a.AccountNumber);
-                        sw.WriteLine(a.BSB);
-                        sw.WriteLine(a.Balance);
+                        sw.WriteLine();
+                        sw.Write(a.Name);
+                        sw.WriteLine();
+                        sw.Write(a.AccountNumber);
+                        sw.WriteLine();
+                        sw.Write(a.BSB);
+                        sw.WriteLine();
+                        sw.Write(a.Balance);
                     }
                 }
             }
         } 
 
+        // performs a transaction
         public void completeTransaction(Transaction transfer)
         {
             transfer.transact();
         }
 
+        // string to hold error mesages for database implementation
         public string errorMessage(string error)
         {
             return error;
         }
 
+        // Adds a user to list of uses
         public void AddUser(User user)
         {
             _userList.Add(user);
         }
 
-        public void AccCreated()
-        {
-            _nextBSB += 1;
-            _nextAccNo += 1;
-        }
+       
+        // Getter fo rlist of users
         public List<User> Users
         {
             get
@@ -147,21 +163,7 @@ namespace PersonalBankerWPF
             }
         }
 
-        public string BSB
-        {
-            get
-            {
-                return _nextBSB;
-            }
-        }
-
-        public string Acc
-        {
-            get
-            {
-                return _nextAccNo;
-            }
-        }
+        
 
 
     }

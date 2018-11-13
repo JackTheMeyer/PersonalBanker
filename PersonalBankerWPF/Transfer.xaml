@@ -108,20 +108,22 @@
         <TextBlock x:Name="balanceText" Grid.Column="1" Margin="338,47,112,27" FontWeight="Bold" FontSize="16"/>
         <TextBlock x:Name="nameText" Grid.Column="1" Margin="106,60,294,22" FontWeight="Bold" />
         <TextBlock x:Name="numberText" Grid.Column="1" Margin="106,39,294,43" FontWeight="Bold" />
-        
-        <TextBlock x:Name="Display2" Grid.Column="1" HorizontalAlignment="Left" Margin="207,10,0,0" TextWrapping="Wrap" Text="Send or Debit" VerticalAlignment="Top" Grid.Row="2"/>
-        <TextBlock x:Name="accountTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="164,10,0,0" Grid.Row="4" TextWrapping="Wrap" Text="What account will you send too??" VerticalAlignment="Top"/>
-        <TextBlock x:Name="AmountTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="164,10,0,0" Grid.Row="6" TextWrapping="Wrap" Text="How much would you like to send" VerticalAlignment="Top"/>
-        <TextBlock x:Name="DescriptionTextBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="192,10,0,0" Grid.Row="8" TextWrapping="Wrap" Text="Add a short Description" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="DescriptionTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="192,31,0,0" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Center" Style="{DynamicResource TextBoxStyle2}"/>
-        <TextBox x:Name="AccountTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="247,40,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" TextAlignment="Center" Style="{DynamicResource TextBoxStyle2}"/>
-        <TextBox x:Name="AmountTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="192,31,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Center" Style="{DynamicResource TextBoxStyle2}"/>
-        
-        <Button x:Name="TransferButton" Content="Send" Grid.Column="1" HorizontalAlignment="Left" Margin="224,10,0,0" Grid.Row="10" VerticalAlignment="Top" Width="75" Click="confirmTransfer"/>
+        <TextBlock x:Name="Display2" Grid.Column="1" HorizontalAlignment="Left" Margin="207,10,0,0" TextWrapping="Wrap" Text="Send or Debit" VerticalAlignment="Top" Grid.Row="2"/>
+        <TextBlock x:Name="accountTextBlock" Visibility="Hidden" Grid.Column="1" HorizontalAlignment="Left" Margin="164,10,0,0" Grid.Row="4" TextWrapping="Wrap" Text="What account will you send too??" VerticalAlignment="Top"/>
+        <TextBlock x:Name="AmountTextBlock" Visibility="Hidden" Grid.Column="1" HorizontalAlignment="Left" Margin="164,10,0,0" Grid.Row="6" TextWrapping="Wrap" Text="How much would you like to send" VerticalAlignment="Top"/>
+        <TextBlock x:Name="DescriptionTextBlock" Visibility="Hidden" Grid.Column="1" HorizontalAlignment="Left" Margin="192,10,0,0" Grid.Row="8" TextWrapping="Wrap" Text="Add a short Description" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="DescriptionTextBox" Visibility="Hidden" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="192,31,0,0" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Center" Style="{DynamicResource TextBoxStyle2}"/>
+        <TextBox x:Name="AccountTextBox" Visibility="Hidden" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="247,40,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" TextAlignment="Center" Style="{DynamicResource TextBoxStyle2}"/>
+        <TextBox x:Name="AmountTextBox" Visibility="Hidden" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="192,31,0,0" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Center" Style="{DynamicResource TextBoxStyle2}"/>
+
+        <Button x:Name="TransferButton" Visibility="Hidden" Content="Send" Grid.Column="1" HorizontalAlignment="Left" Margin="224,10,0,0" Grid.Row="10" VerticalAlignment="Top" Width="75" Click="confirmTransfer"/>
         <Button x:Name="SendFundsButton" Content="Send Funds" Grid.Column="1" HorizontalAlignment="Left" Margin="56,35,0,0" Grid.Row="2" VerticalAlignment="Top" Width="150" Click="ViewSendOptions"/>
         <Button x:Name="TakeFundsButton" Content="Debit another Account" Grid.Column="1" HorizontalAlignment="Left" Margin="276,35,0,0" Grid.Row="2" VerticalAlignment="Top" Width="150" Click="ViewTakeOptions"/>
-        <TextBox x:Name="BSBTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="164,40,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" TextAlignment="Center" Style="{DynamicResource TextBoxStyle2}"/>
+        <TextBox x:Name="BSBTextBox" Visibility="Hidden" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="164,40,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="78" TextAlignment="Center" Style="{DynamicResource TextBoxStyle2}"/>
+        <TextBlock x:Name="ErrorTextBlock" Visibility="Hidden" Height="22" Padding="3" Grid.Column="1" HorizontalAlignment="Left" Margin="94,72.2,0,0" Grid.Row="4" TextWrapping="Wrap" Text="Error: That account does not exist, please try again" VerticalAlignment="Center" Width="388"/>
+        <Button Content="&lt;- Back" HorizontalAlignment="Left" Margin="55,42,0,0" VerticalAlignment="Top" Width="75" Click="GoBack"/>
 
 
     </Grid>
